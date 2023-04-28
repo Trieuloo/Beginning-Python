@@ -1,5 +1,7 @@
-#Third project where we are going to play rock paper scissors with a robot in a bo5 (ties are not tracked) where we track games alongside with tracking the wins, losses, and ties.
+#Third project where we are going to play rock paper scissors with a robot in a bo5 where we track games alongside with tracking the wins, losses, and ties.
 from random import randint
+from sys import exit
+
 a = 0 
 games = 0
 random = 0
@@ -7,7 +9,6 @@ ties = 0
 losses = 0
 wins = 0
 count = 0
-result = ['Rock', 'Paper', 'Scissors']
 while count < 5:
     print('Please enter in either: Rock, Paper, Scissors, or Quit.')
     player = input()
@@ -19,6 +20,7 @@ while count < 5:
                 games += 1
                 ties += 1
                 print('You have played (' + str(games) + ') games so far ')
+                print('Your current record is:   (' + str(wins) + ') wins --- (' + str(ties) + ') ties --- (' + str(losses) + ')losses')
                 break
             elif random == 2:
                 print ('The computer chose paper, Sorry, you have lost this match')
@@ -26,6 +28,7 @@ while count < 5:
                 count += 1 
                 losses +=1
                 print('You have played (' + str(games) + ') games so far ')
+                print('Your current record is:   (' + str(wins) + ') wins --- (' + str(ties) + ') ties --- (' + str(losses) + ')losses')
                 break
             elif random == 3:
                 print ('The computer chose scissors!, Congrats!!! You have won this match')
@@ -33,6 +36,7 @@ while count < 5:
                 count += 1 
                 wins += 1
                 print('You have played (' + str(games) + ') games so far ')
+                print('Your current record is:   (' + str(wins) + ') wins --- (' + str(ties) + ') ties --- (' + str(losses) + ')losses')
                 break
             
         elif player == 'Paper':
@@ -42,12 +46,14 @@ while count < 5:
                 count += 1 
                 wins += 1
                 print('You have played (' + str(games) + ') games so far ')
+                print('Your current record is:   (' + str(wins) + ') wins --- (' + str(ties) + ') ties --- (' + str(losses) + ')losses')
                 break
              elif random == 2:
                 print ('The computer chose paper, This match is a tie')
                 games += 1
                 ties += 1
                 print('You have played (' + str(games) + ') games so far ')
+                print('Your current record is:   (' + str(wins) + ') wins --- (' + str(ties) + ') ties --- (' + str(losses) + ')losses')
                 break
              elif random == 3:
                 print ('The computer chose scissors, Sorry, you have lost this match')
@@ -55,6 +61,7 @@ while count < 5:
                 count += 1 
                 losses += 1
                 print('You have played (' + str(games) + ') games so far ')
+                print('Your current record is:   (' + str(wins) + ') wins --- (' + str(ties) + ') ties --- (' + str(losses) + ')losses')
                 break
             
         elif player == 'Scissors':
@@ -90,4 +97,8 @@ while count < 5:
                 print ('Please try again')
                 player = input()
             
-print('Thanks for playing!')
+if (wins > losses):
+    print('Congratulations for winning! Would you like to try again?')
+elif (losses < wins):
+    print('Sorry, you lost. You should try again!')
+
