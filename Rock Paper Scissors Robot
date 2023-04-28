@@ -1,4 +1,4 @@
-#Third project where we are going to play rock paper scissors with a robot in a bo5 where we track games alongside with tracking the wins, losses, and ties.
+#Third project where we are going to play rock paper scissors with a robot in a bo5 (ties are not tracked) where we track games alongside with tracking the wins, losses, and ties.
 from random import randint
 from sys import exit
 a = 0 
