@@ -1,0 +1,20 @@
+import random
+#Random card generator from a deck of cards 
+royals = ['Jacks' , 'Queens' , 'Kings', 'Aces']
+suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
+colors = ['Red' , 'Black']
+for i in range(0,10):
+    randomizer = random.randint(1,15)
+    randsuits = str(random.choice(suits))
+    randcolors = str(random.choice(colors))
+    randroyals = str(random.choice(royals))
+    
+    if randomizer < 11: 
+        print(randomizer) 
+        print(randsuits + ' ' + randcolors) 
+        print ('----------------')
+    else:
+        print(randroyals)
+        print(randsuits + ' ' + randcolors)
+        print ('----------------')
+print('This code should randomize a card from a deck of cards 10 times.'
