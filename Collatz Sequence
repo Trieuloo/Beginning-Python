@@ -1,0 +1,33 @@
+# Prompts user to enter in a positive integer to run the collatz sequence
+import time, sys
+def collatz(number):
+    if number % 2:
+        return 3 * number + 1
+    else:
+        return number // 2
+
+while True:
+    try:
+        number = int(input('Please enter in a positive integer:'))
+        if number > 1:
+            break
+        elif number == 0:
+            print('Sorry, 0 is the only non-working positive integer')
+        else:
+            print('Please try to enter a non-negative integers')
+            continue
+    except ValueError:
+        print('Make sure to enter in integers only ')
+run = 0
+try:
+    while(number != 1):
+        print(collatz(number))
+        number = collatz(number)
+        run += 1
+        time.sleep(1)
+
+except:
+    if KeyboardInterrupt:
+        sys.exit()
+
+print('The collatz sequence is finished and ran a total of (' + str(run) + ') times')
