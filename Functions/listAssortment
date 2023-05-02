@@ -1,0 +1,10 @@
+#Practice project comma code function
+
+def listAssortment(value):
+    if len(value) == 0:
+        return 'Please enter in a different value above 0'
+    elif len(value) == 1:
+        return value[0]
+    else:
+        return ', '.join(value[:-1]) + ' and ' + value[-1]
+
