@@ -13,3 +13,35 @@ messages =['It is certain',
 
 print(messages[random.randint(0, len(messages)-1)]) # for randint we want it to start at 0 because in python it stores th\
 # e first data at 0, and to compensate for it we -1 atg teh end 
+
+
+Revised improved version with prompts, and making sure that the loop runs continuaslly 
+
+import random
+
+# Ask the user if they want to play with the Magic 8-Ball
+print('Hello, would you like your future to be decided through the magic 8 ball? (yes/no)') # makes sure they want to start. Only can start if
+# they enter in anything else it doesnt go through the if loop
+yes = input()
+if yes.lower() == 'yes':
+    print("Enter in whatever question would you like to ask:") # Ask the question to magic 8 ball
+    question = input() # put in an input so they can put a question even though answer is still deterministic
+    messages = ['It is certain', # all the data that can get pulled from
+                'It is decidedly so',
+                'Yes, definitely',
+                'Reply hazy, try again',
+                'Ask again later',
+                'Concentrate and ask again',
+                'My reply is no',
+                'Outlook not so good',
+                'Very doubtful']
+    random_response = random.choice(messages) #Declared the random response varaible through random.choice messages to get one of the 8 choices at all time
+    print(random_response) # print response after prompt
+
+    while True: # makes another loop where the code above will never run and always print out a random response while true.
+        user_input = input("Ask your question (press Enter to exit): ")
+        if user_input == "":
+            break # breaks the loop when user enters in "" which means they entered in enter
+        print(random_response)
+else:
+    print('Thanks for playing the game')
