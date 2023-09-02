@@ -1,0 +1,15 @@
+
+# This is a small python project where we create an 8 ball and have it go through all the different choices and output something random at all times
+import random
+messages =['It is certain',
+          'It is decidedly so',
+          'Yes Definitely',
+          'Reply hazy try again',
+            'Ask again later',
+          'Concentrate and ask aagain',
+          'My reply is no',
+          'Outlook not so good',
+          'Very doubtful']
+
+print(messages[random.randint(0, len(messages)-1)]) # for randint we want it to start at 0 because in python it stores th\
+# e first data at 0, and to compensate for it we -1 atg teh end 
